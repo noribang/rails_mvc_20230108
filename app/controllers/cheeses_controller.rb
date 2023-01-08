@@ -6,5 +6,12 @@ class CheesesController < ApplicationController
         # byebug
         render json: { name: "Limburger" }
     end
+    # READ
+    # GET /cheeses/:id
+    def show
+        # byebug
+        cheese = Cheese.find(params[:id])
+        render json: cheese
+    end
 
 end
