@@ -4,7 +4,9 @@ class CheesesController < ApplicationController
     # Default looks for index.html.erb file in app/views/constroller_name.
     def index
         # byebug
-        render json: { name: "Limburger" }
+        # render json: { name: "Limburger" }
+        cheeses = Cheese.all
+        render json: cheeses
     end
     # READ
     # GET /cheeses/:id
