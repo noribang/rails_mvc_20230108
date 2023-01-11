@@ -17,7 +17,10 @@ class CheesesController < ApplicationController
     # GET /cheeses/:id
     def show
         # byebug
-        cheese = Cheese.find(params[:id])
+        # cheese = Cheese.find(params[:id])
+        # render json: cheese
+
+        cheese = Cheese.find_by(id: params[:id])
         render json: cheese
     end
 
