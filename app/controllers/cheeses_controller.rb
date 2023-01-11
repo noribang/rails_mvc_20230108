@@ -21,17 +21,20 @@ class CheesesController < ApplicationController
         # render json: cheese
 
         # Returns hash with all keys.
-        cheese = Cheese.find_by(id: params[:id])
+        # cheese = Cheese.find_by(id: params[:id])
         # render json: cheese
-        render json: {
-                        id: cheese.id,
-                        name: cheese.name,
-                        price: cheese.price,
-                        is_best_seller: cheese.is_best_seller,
-                        created_at: cheese.created_at, 
-                        updated_at: cheese.updated_at
-                    }
+        # render json: {
+        #                 id: cheese.id,
+        #                 name: cheese.name,
+        #                 price: cheese.price,
+        #                 is_best_seller: cheese.is_best_seller,
+        #                 created_at: cheese.created_at, 
+        #                 updated_at: cheese.updated_at
+        #             }
 
+        # Serialization
+        cheese = Cheese.find_by(id: params[:id])
+        render json: cheese, except: [:created_at, :updated_at]
     end
 
 end
