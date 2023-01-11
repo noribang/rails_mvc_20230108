@@ -34,7 +34,7 @@ class CheesesController < ApplicationController
 
         # Serialization
         cheese = Cheese.find_by(id: params[:id])
-        render json: cheese, except: [:created_at, :updated_at]
+        render json: cheese, except: [:created_at, :updated_at], methods: [:summary]
     end
 
 end
