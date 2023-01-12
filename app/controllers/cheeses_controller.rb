@@ -40,6 +40,9 @@ class CheesesController < ApplicationController
     def show
         # Find cheese instance by id and return hash.
         cheese = Cheese.find_by(id: params[:id])
+        if cheese
+            render json: cheese
+        end
         byebug
     end
 
