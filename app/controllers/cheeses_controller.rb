@@ -41,7 +41,7 @@ class CheesesController < ApplicationController
         # Find cheese instance by id and return hash.
         cheese = Cheese.find_by(id: params[:id])
         if cheese
-            render json: cheese, except: [:created_at, :updated_at]
+            render json: cheese, except: [:created_at, :updated_at], methods: [:summary]
         end
         # byebug
     end
